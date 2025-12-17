@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SET B - JavaScript Tasks</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background:#f7f7fb; }
+    h1 { margin-bottom: 6px; }
+    .note { color:#555; margin-bottom: 18px; }
+    .card { background:#fff; padding:14px; border-radius:12px; margin-bottom:12px; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+    .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    input, select { padding:10px; border:1px solid #ddd; border-radius:10px; min-width:240px; }
+    button { padding:10px 14px; border:none; border-radius:10px; cursor:pointer; background:#222; color:#fff; }
+    button:hover { opacity:.9; }
+    .out { margin-top:10px; padding:10px; background:#f2f2ff; border-radius:10px; white-space:pre-wrap; }
+    .mini { font-size: 13px; color:#666; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; }
+    th,td { border:1px solid #ddd; padding:8px; text-align:left; }
+  </style>
+</head>
+<body>
+
+<h1>SET B — JavaScript Tasks (1–30)</h1>
+<div class="note">Each task has a button. Enter values → click → see output.</div>
+
+<div class="card">
+  <h3>1) Reverse words in a sentence</h3>
+  <div class="row">
+    <input id="t1" placeholder="e.g. Hello World JS" />
+    <button onclick="task1()">Run</button>
+  </div>
+  <div id="o1" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>2) Extract first & last character from a string</h3>
+  <div class="row">
+    <input id="t2" placeholder="e.g. JavaScript" />
+    <button onclick="task2()">Run</button>
+  </div>
+  <div id="o2" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>3) Find longest word from sentence</h3>
+  <div class="row">
+    <input id="t3" placeholder="e.g. I love JavaScript programming" />
+    <button onclick="task3()">Run</button>
+  </div>
+  <div id="o3" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>4) Convert string to Title Case</h3>
+  <div class="row">
+    <input id="t4" placeholder="e.g. hello world" />
+    <button onclick="task4()">Run</button>
+  </div>
+  <div id="o4" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>5) Replace a word in a string</h3>
+  <div class="row">
+    <input id="t5s" placeholder="String (e.g. I love JS)" />
+    <input id="t5a" placeholder="Find (e.g. JS)" />
+    <input id="t5b" placeholder="Replace with (e.g. JavaScript)" />
+    <button onclick="task5()">Run</button>
+  </div>
+  <div id="o5" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>6) Count vowels in a string</h3>
+  <div class="row">
+    <input id="t6" placeholder="e.g. education" />
+    <button onclick="task6()">Run</button>
+  </div>
+  <div id="o6" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>7) Create array from user popup input</h3>
+  <div class="row">
+    <button onclick="task7()">Popup & Save Array</button>
+    <span class="mini">(Enter comma separated: a,b,c)</span>
+  </div>
+  <div id="o7" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>8) Display third element from array</h3>
+  <div class="row">
+    <button onclick="task8()">Show 3rd Element</button>
+  </div>
+  <div id="o8" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>9) Find last element from array (popup)</h3>
+  <div class="row">
+    <button onclick="task9()">Alert Last Element</button>
+  </div>
+  <div id="o9" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>10) Find index of a given element in array</h3>
+  <div class="row">
+    <input id="t10" placeholder="Element to find (e.g. apple)" />
+    <button onclick="task10()">Run</button>
+  </div>
+  <div id="o10" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>11) Apply map() to square each element</h3>
+  <div class="row">
+    <input id="t11" placeholder="Numbers comma separated (e.g. 1,2,3)" />
+    <button onclick="task11()">Run</button>
+  </div>
+  <div id="o11" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>12) Sort array in ascending order</h3>
+  <div class="row">
+    <input id="t12" placeholder="Numbers comma separated (e.g. 5,1,9)" />
+    <button onclick="task12()">Run</button>
+  </div>
+  <div id="o12" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>13) Use splice to replace elements</h3>
+  <div class="row">
+    <input id="t13a" placeholder="Array (e.g. 1,2,3,4)" />
+    <input id="t13i" placeholder="Index (e.g. 1)" />
+    <input id="t13v" placeholder="New value (e.g. 99)" />
+    <button onclick="task13()">Run</button>
+  </div>
+  <div id="o13" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>14) Use splice to delete + insert simultaneously</h3>
+  <div class="row">
+    <input id="t14a" placeholder="Array (e.g. 1,2,3,4)" />
+    <input id="t14i" placeholder="Index (e.g. 2)" />
+    <input id="t14d" placeholder="Delete count (e.g. 1)" />
+    <input id="t14ins" placeholder="Insert values (e.g. 10,20)" />
+    <button onclick="task14()">Run</button>
+  </div>
+  <div id="o14" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>15) Function: arithmetic operations based on user choice</h3>
+  <div class="row">
+    <input id="t15a" placeholder="a (e.g. 10)" />
+    <input id="t15b" placeholder="b (e.g. 5)" />
+    <select id="t15op">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value=""></option>
+      <option value="/">/</option>
+    </select>
+    <button onclick="task15()">Run</button>
+  </div>
+  <div id="o15" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>16) Function: calculate factorial</h3>
+  <div class="row">
+    <input id="t16" placeholder="n (e.g. 5)" />
+    <button onclick="task16()">Run</button>
+  </div>
+  <div id="o16" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>17) Function: check even/odd</h3>
+  <div class="row">
+    <input id="t17" placeholder="n (e.g. 7)" />
+    <button onclick="task17()">Run</button>
+  </div>
+  <div id="o17" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>18) Function: find max of 3 numbers</h3>
+  <div class="row">
+    <input id="t18a" placeholder="a" />
+    <input id="t18b" placeholder="b" />
+    <input id="t18c" placeholder="c" />
+    <button onclick="task18()">Run</button>
+  </div>
+  <div id="o18" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>19) Function: sum of array values</h3>
+  <div class="row">
+    <input id="t19" placeholder="Numbers (e.g. 1,2,3,4)" />
+    <button onclick="task19()">Run</button>
+  </div>
+  <div id="o19" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>20) Popup: allow only 10 digits input</h3>
+  <div class="row">
+    <button onclick="task20()">Popup</button>
+  </div>
+  <div id="o20" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>21) Popup: detect numeric vs string and apply allowed operations</h3>
+  <div class="row">
+    <button onclick="task21()">Popup</button>
+  </div>
+  <div id="o21" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>22–26) Signup form with validation + table output + reset clears</h3>
+
+  <form id="signupForm" onsubmit="return submitForm(event)" onreset="resetForm()">
+    <div class="row">
+      <input id="name" placeholder="Name (required)" />
+      <input id="email" placeholder="Email (required)" />
+      <input id="password" type="password" placeholder="Password (min 6)" />
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+    </div>
+    <div id="formMsg" class="out"></div>
+  </form>
+
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Email</th><th>Password</th></tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>27–28) Create person object and update age using input</h3>
+  <div class="row">
+    <input id="pname" placeholder="Person name (e.g. Ali)" />
+    <input id="page" placeholder="Age (e.g. 20)" />
+    <input id="newAge" placeholder="New age (e.g. 22)" />
+    <button onclick="task27_28()">Create & Update</button>
+  </div>
+  <div id="o28" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>29) Countdown timer using setInterval (Start/Pause/Reset)</h3>
+  <div class="row">
+    <input id="timerStart" placeholder="Start seconds (e.g. 10)" />
+    <button onclick="timerStart()">Start</button>
+    <button onclick="timerPause()">Pause</button>
+    <button onclick="timerReset()">Reset</button>
+  </div>
+  <div id="timerOut" class="out"></div>
+</div>
+
+<div class="card">
+  <h3>30) Hover event: change button style on mouse over</h3>
+  <button id="hoverBtn" onmouseover="hoverOn()" onmouseout="hoverOff()">Hover Me</button>
+  <div id="o30" class="out">Hover the button above.</div>
+</div>
+
+<script>
+  // helpers
+  const $ = (id) => document.getElementById(id);
+  let savedArray = [];
+
+  function task1(){
+    const s = $("t1").value.trim();
+    $("o1").textContent = s ? s.split(/\s+/).reverse().join(" ") : "Enter a sentence.";
+  }
+
+  function task2(){
+    const s = $("t2").value;
+    if(!s) return $("o2").textContent = "Enter a string.";
+    $("o2").textContent = First: ${s[0]} | Last: ${s[s.length-1]};
+  }
+
+  function task3(){
+    const s = $("t3").value.trim();
+    if(!s) return $("o3").textContent = "Enter a sentence.";
+    const words = s.split(/\s+/);
+    const longest = words.reduce((a,b)=> a.length>=b.length?a:b, "");
+    $("o3").textContent = Longest word: ${longest};
+  }
+
+  function task4(){
+    const s = $("t4").value;
+    $("o4").textContent = s.replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  function task5(){
+    const s = $("t5s").value;
+    const a = $("t5a").value;
+    const b = $("t5b").value;
+    if(!s || !a) return $("o5").textContent = "Enter string + find word.";
+    $("o5").textContent = s.replaceAll(a, b);
+  }
+
+  function task6(){
+    const s = $("t6").value;
+    const m = s.match(/[aeiou]/gi);
+    $("o6").textContent = Vowels count: ${m ? m.length : 0};
+  }
+
+  function task7(){
+    const input = prompt("Enter values comma separated (e.g. a,b,c):");
+    if(input === null) return;
+    savedArray = input.split(",").map(x=>x.trim());
+    $("o7").textContent = Array saved: [${savedArray.join(", ")}];
+  }
+
+  function task8(){
+    if(savedArray.length < 3) return $("o8").textContent = "Array not set or less than 3 elements. Run task 7 first.";
+    $("o8").textContent = 3rd element: ${savedArray[2]};
+  }
+
+  function task9(){
+    if(savedArray.length === 0) return $("o9").textContent = "Array not set. Run task 7 first.";
+    alert(savedArray[savedArray.length-1]);
+    $("o9").textContent = Last element alerted: ${savedArray[savedArray.length-1]};
+  }
+
+  function task10(){
+    if(savedArray.length === 0) return $("o10").textContent = "Array not set. Run task 7 first.";
+    const el = $("t10").value.trim();
+    const idx = savedArray.indexOf(el);
+    $("o10").textContent = Index of "${el}": ${idx};
+  }
+
+  function toNumArray(s){
+    return s.split(",").map(x=>Number(x.trim())).filter(x=>!Number.isNaN(x));
+  }
+
+  function task11(){
+    const arr = toNumArray($("t11").value);
+    $("o11").textContent = Squared: [${arr.map(n=>n*n).join(", ")}];
+  }
+
+  function task12(){
+    const arr = toNumArray($("t12").value);
+    arr.sort((a,b)=>a-b);
+    $("o12").textContent = Sorted: [${arr.join(", ")}];
+  }
+
+  function task13(){
+    const arr = toNumArray($("t13a").value);
+    const i = Number($("t13i").value);
+    const v = Number($("t13v").value);
+    if(Number.isNaN(i) || Number.isNaN(v)) return $("o13").textContent = "Enter valid index and value.";
+    arr.splice(i, 1, v);
+    $("o13").textContent = After splice replace: [${arr.join(", ")}];
+  }
+
+  function task14(){
+    const arr = toNumArray($("t14a").value);
+    const i = Number($("t14i").value);
+    const d = Number($("t14d").value);
+    const ins = toNumArray($("t14ins").value || "");
+    if(Number.isNaN(i) || Number.isNaN(d)) return $("o14").textContent = "Enter valid index and delete count.";
+    arr.splice(i, d, ...ins);
+    $("o14").textContent = After splice delete+insert: [${arr.join(", ")}];
+  }
+
+  function calc(a,b,op){
+    if(op==="+") return a+b;
+    if(op==="-") return a-b;
+    if(op==="*") return a*b;
+    if(op==="/") return b===0 ? "Cannot divide by 0" : a/b;
+    return "Invalid op";
+  }
+
+  function task15(){
+    const a = Number($("t15a").value);
+    const b = Number($("t15b").value);
+    const op = $("t15op").value;
+    if(Number.isNaN(a) || Number.isNaN(b)) return $("o15").textContent = "Enter valid numbers.";
+    $("o15").textContent = Result: ${calc(a,b,op)};
+  }
+
+  function fact(n){
+    if(n<0) return "No factorial for negative";
+    let f=1;
+    for(let i=1;i<=n;i++) f*=i;
+    return f;
+  }
+
+  function task16(){
+    const n = Number($("t16").value);
+    if(Number.isNaN(n)) return $("o16").textContent = "Enter valid number.";
+    $("o16").textContent = Factorial: ${fact(n)};
+  }
+
+  function task17(){
+    const n = Number($("t17").value);
+    if(Number.isNaN(n)) return $("o17").textContent = "Enter valid number.";
+    $("o17").textContent = n%2===0 ? "Even" : "Odd";
+  }
+
+  function task18(){
+    const a = Number($("t18a").value);
+    const b = Number($("t18b").value);
+    const c = Number($("t18c").value);
+    if([a,b,c].some(Number.isNaN)) return $("o18").textContent = "Enter all 3 numbers.";
+    $("o18").textContent = Max: ${Math.max(a,b,c)};
+  }
+
+  function task19(){
+    const arr = toNumArray($("t19").value);
+    const sum = arr.reduce((x,y)=>x+y,0);
+    $("o19").textContent = Sum: ${sum};
+  }
+
+  function task20(){
+    const s = prompt("Enter 10-digit number:");
+    if(s === null) return;
+    const ok = /^\d{10}$/.test(s);
+    $("o20").textContent = ok ? "Valid (10 digits)" : "Invalid (must be exactly 10 digits)";
+  }
+
+  function task21(){
+    const x = prompt("Enter value (number or string):");
+    if(x === null) return;
+    if(!isNaN(x) && x.trim() !== ""){
+      const n = Number(x);
+      $("o21").textContent = Numeric detected. Allowed ops: square=${n*n}, double=${n*2};
+    } else {
+      $("o21").textContent = String detected. Allowed ops: upper="${x.toUpperCase()}", length=${x.length};
+    }
+  }
+
+  // 22-26 Form
+  function submitForm(e){
+    e.preventDefault();
+    const name = $("name").value.trim();
+    const email = $("email").value.trim();
+    const pwd = $("password").value;
+
+    if(!name || !email){
+      $("formMsg").textContent = "23) Required field rule: Name and Email must not be empty.";
+      return false;
+    }
+    if(pwd.length < 6){
+      $("formMsg").textContent = "22) Password rule: Minimum length is 6.";
+      return false;
+    }
+
+    $("formMsg").textContent = "Form submitted successfully ✅";
+    const row = document.createElement("tr");
+    row.innerHTML = <td>${name}</td><td>${email}</td><td>${"*".repeat(pwd.length)}</td>;
+    $("tableBody").appendChild(row);
+    return false;
+  }
+
+  function resetForm(){
+    // 26 Clear output on reset
+    $("formMsg").textContent = "";
+    // optional: clear table too
+    $("tableBody").innerHTML = "";
+  }
+
+  // 27-28
+  function task27_28(){
+    const name = $("pname").value.trim() || "Unknown";
+    const age = Number($("page").value);
+    const newAge = Number($("newAge").value);
+
+    if(Number.isNaN(age) || Number.isNaN(newAge)) return $("o28").textContent = "Enter valid ages.";
+
+    let person = { name, age };
+    person.age = newAge; // update using input
+    $("o28").textContent = Person object after update:\n${JSON.stringify(person, null, 2)};
+  }
+
+  // 29 Timer
+  let timerId = null;
+  let t = 0;
+  let initialT = 0;
+
+  function renderTimer(){ $("timerOut").textContent = Time: ${t}s; }
+
+  function timerStart(){
+    if(timerId) return;
+    const start = Number($("timerStart").value);
+    if(t === 0){
+      if(Number.isNaN(start) || start < 0) return $("timerOut").textContent = "Enter start seconds (>=0).";
+      t = start;
+      initialT = start;
+      renderTimer();
+    }
+    timerId = setInterval(()=>{
+      renderTimer();
+      if(t <= 0){
+        clearInterval(timerId);
+        timerId = null;
+        $("timerOut").textContent += "\nDone ✅";
+        return;
+      }
+      t--;
+    },1000);
+  }
+
+  function timerPause(){
+    clearInterval(timerId);
+    timerId = null;
+    renderTimer();
+  }
+
+  function timerReset(){
+    clearInterval(timerId);
+    timerId = null;
+    t = initialT;
+    renderTimer();
+  }
+
+  // 30 Hover
+  function hoverOn(){
+    const b = $("hoverBtn");
+    b.style.background = "hotpink";
+    b.style.color = "white";
+    $("o30").textContent = "Mouse over ✅ style changed.";
+  }
+  function hoverOff(){
+    const b = $("hoverBtn");
+    b.style.background = "#222";
+    b.style.color = "white";
+    $("o30").textContent = "Mouse out ✅ style restored.";
+  }
+
+  renderTimer();
+</script>
+
+</body>
+</html>
